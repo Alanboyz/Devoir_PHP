@@ -1,0 +1,61 @@
+<div class="d-flex h-100 text-center text-white bg-dark">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-left mb-0">{{currentUser}}</h3>
+        <nav class="nav nav-masthead justify-content-center float-right">
+          <a class="nav-link" role="button" routerLink="/" (click)="deconnexion()" >Deconnexion</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="" style="display: flex;">
+      <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Nom </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Prix </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="color">
+          <th mat-header-cell *matHeaderCellDef> Couleur </th>
+          <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="numeroSerie">
+          <th mat-header-cell *matHeaderCellDef> Numero de Serie </th>
+          <td mat-cell *matCellDef="let element"> {{element.numeroSerie}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div class="container-button" style="display: flex;flex-direction: column; margin-left: 20px">
+        <button type="button" class="btn btn-outline-success" (click)="addElement()" style="margin-bottom: 15px">Ajouter</button>
+        <button type="button" class="btn btn-outline-danger " (click)="suprElement()">Supprimer</button>
+      </div>
+
+    </main>
+
+
+
+    <footer class="mt-auto text-white-50">
+      <p>directed by Alan Diagne</p>
+    </footer>
+  </div>
+
+
+</div>

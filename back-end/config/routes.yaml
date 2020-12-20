@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+angular_app:
+  path:          /
+  controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template:  'index.html.twig'

@@ -1,0 +1,116 @@
+<!-- REGISTRATION FORM -->
+<div class="text-center" style="padding:50px 0">
+  <div class="logo">register</div>
+  <div class="login-form-1">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()" id="register-form" class="text-left">
+      <div class="login-form-main-message"></div>
+      <div class="main-login-form">
+        <div class="login-group">
+          <div class="form-group">
+            <label for="reg_username" class="sr-only">Pseudo</label>
+            <mat-form-field
+              class="form-group form">
+              <input matInput type="text" [formControl]="pseudo" required class="form-control" id="reg_username"
+                     placeholder="Pseudo">
+              <mat-error
+                class="error-message alert alert-danger"
+                *ngIf="false "
+              >
+                <div *ngIf="addForm.get('pseudo').errors">
+                  required
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label for="reg_password" class="sr-only">Password</label>
+            <mat-form-field
+              class="form-group form">
+              <input matInput type="password" [formControl]="psw" required class="form-control" id="reg_password"
+                     placeholder="Password">
+              <mat-error
+                class="error-message alert alert-danger"
+                *ngIf="false "
+              >
+                <div *ngIf="addForm.get('psw').errors">
+                  required
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+            <mat-form-field
+              class="form-group form">
+              <input matInput type="password" [formControl]="pswConf" required class="form-control"
+                     id="reg_password_confirm"
+                     placeholder="confirm password">
+              <mat-error
+                class="error-message alert alert-danger"
+                *ngIf="false "
+              >
+                <div *ngIf="addForm.get('pswConf').errors">
+                  required
+                </div>
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+
+          <div class="form-group">
+            <label for="reg_email" class="sr-only">Email</label>
+            <mat-form-field
+              class="form-group form">
+              <input matInput ngModel required email="true" [formControl]="mail" type="email" class="form-control"
+                     id="reg_email" placeholder="email">
+              <mat-error
+                class="error-message alert alert-danger"
+                *ngIf="false "
+              >
+                <div *ngIf="addForm.get('mail').errors">
+                  required
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label for="reg_firstName" class="sr-only">First Name</label>
+            <mat-form-field
+              class="form-group form">
+            <input matInput required [formControl]="firstName" type="text" class="form-control" id="reg_firstName" placeholder="First name">
+              <mat-error
+                class="error-message alert alert-danger"
+                *ngIf="false "
+              >
+                <div *ngIf="addForm.get('firstName').errors">
+                  required
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label for="reg_secName" class="sr-only">Second name</label>
+            <mat-form-field
+              class="form-group form">
+              <input matInput required [formControl]="secName" type="text" class="form-control" id="reg_secName" placeholder="Second name">
+              <mat-error
+                class="error-message alert alert-danger"
+                *ngIf="false "
+              >
+                <div *ngIf="addForm.get('secName').errors">
+                  required
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+        <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="etc-login-form">
+        <p>already have an account? <a role="button" (click)="close()">login here</a></p>
+      </div>
+    </form>
+  </div>
+</div>
